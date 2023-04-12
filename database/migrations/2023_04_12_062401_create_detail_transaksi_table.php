@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('detail_transaksi', function (Blueprint $table) {
-            $table->string('id_detail','10')->primary()->autoIncrement();
-            $table->string('id_transaksi','10')->index();
-            $table->string('id_buku','10')->index();
+            $table->string('id_detail', '10')->primary();
+            $table->string('id_transaksi', '10')->index();
+            $table->string('id_buku', '10')->index();
             $table->integer('jumlah');
             $table->double('total');
             $table->timestamps();

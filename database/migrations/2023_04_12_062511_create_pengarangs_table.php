@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengarang', function (Blueprint $table) {
-            $table->string('id_pengarang', '10')->primary()->autoIncrement();
-            $table->string('nama');
+        Schema::create('genre', function (Blueprint $table) {
+            $table->integer('id_genre')->autoIncrement();
+            $table->string('genre', '50');
             $table->timestamps();
         });
     }
