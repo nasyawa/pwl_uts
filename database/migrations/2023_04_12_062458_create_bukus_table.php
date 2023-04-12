@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('id_user', '10')->primary();
-            $table->string('nama');
-            $table->string('alamat');
-            $table->string('status', '2');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('buku', function (Blueprint $table) {
+            $table->string('id_buku', '10')->primary()->autoIncrement();
+            $table->string('judul');
+            $table->string('id_pengarang', '10')->index();
+            $table->date('tgl');
+            $table->double('harga');
+            $table->integer('stok');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bukus');
     }
 };
